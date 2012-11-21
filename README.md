@@ -11,7 +11,7 @@ Key ideas:
     * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
  
 
-Alice wants to follow Bob.
+## Alice wants to follow Bob.
 
 ### Alice discovers Bob's HTTPS otxt endpoint.
 
