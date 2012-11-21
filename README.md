@@ -2,6 +2,8 @@
 
 __WORK IN PROGRESS__
 
+Distribute peer-to-peer (P2P) Twitter replacement, because Twitter should have been a protocol not a product.
+
 Key ideas:
 * Focus on 140 characters
 * Hub-less pub/sub. Push fan-out responsiblity to clients.
