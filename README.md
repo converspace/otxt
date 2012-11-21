@@ -102,4 +102,4 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 
 ## TODO
 * unsolicited mentions.
-    * these will be missing the hash param, so the receiver can simple visit the post url and verify that contents are the same and that the from url is a substr of the post url?
+    * these will be missing the hash param. Receivers must check that they are present in either to or cc and simply visit the post url and verify that its contents are the same and that the from url is a substr of the post url?
