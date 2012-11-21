@@ -8,7 +8,7 @@ Key ideas:
 * Focus on 140 characters
 * Hub-less pub/sub. Push fan-out responsiblity to clients.
 * Use HTTPS.
-    * Where HTTPS is not available, use delegated HTTPS endpoints.
+    * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
  
 
 Alice wants to follow Bob.
@@ -77,7 +77,11 @@ Content-Type: application/x-www-url-form-encoded
 
 from=bob.host
 action=post
+url=<this_post_url>
 content=<max 140 chars>
+in_reply_to=<post_url>
+to=<urls_of_users>
+cc=<urls_of_users>
 hash=<hash_using_alices_secret>
 ```
 
@@ -85,7 +89,7 @@ hash=<hash_using_alices_secret>
 HTTP/1.1 200 OK
 ```
 
-If Alice cannot validate the hash or had not sent a follow request, an error response is sent instead. Bob MUST assume unfollow?
+If Alice cannot validate the hash or had not sent a follow request, an error response is sent instead. Bob MUST assume unfollow (this is a simple workaround to skip verifying follow requests)?
 
 
 ## Delegated HTTPS
@@ -96,3 +100,6 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 * When SecureEndpoint receives otxt requests, it sends a notification to Alice's notification callback URL.
 * Alice connects to SecureEndpoint over HTTPS using creds given to her by SecureEndpoint and retrieves her otxt requests. 
 
+## TODO
+* unsolicited mentions.
+    * these will be missing the hash param, so the receiver can simple visit the post url and verify that contents are the same and that the from url is a substr of the post url?
