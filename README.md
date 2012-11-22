@@ -103,6 +103,6 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 ## TODO
 * unsolicited mentions.
     * these will be missing the hash param. Receivers must check that they are present in either to or cc and simply visit the post url and verify that its contents are the same and that the from url is a substr of the post url?
-* profiles
-    * Should just pick up micoformats from alice.host. There should be a simple notification to all foloowers on profile change.
+* profiles (including followers)
+    * Should just pick up micoformats from alice.host. There should be a simple notification to all followers on profile change.
 
