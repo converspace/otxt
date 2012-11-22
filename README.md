@@ -9,7 +9,16 @@ Key ideas:
 * Hub-less pub/sub. Push fan-out responsiblity to clients.
 * Use HTTPS.
     * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
- 
+* A protocol and an API
+    * Server-to-Server Protocol
+        * follow
+        * unfollow
+        * status-update
+        * profile-update
+    * Client-to-Server API
+        * This is server implementation specific. 
+        * Server imlemenations SHOULD expose an API for clients/apps with oAuth authentication.
+
 
 ## Alice wants to follow Bob.
 
@@ -76,10 +85,10 @@ Host: alice.host
 Content-Type: application/x-www-url-form-encoded
 
 from=bob.host
-action=post
-url=<this_post_url>
+action=status_update
+url=<this_status_update_url>
 content=<max 140 chars>
-in_reply_to=<post_url>
+in_reply_to=<status_update_url>
 to=<urls_of_users>
 cc=<urls_of_users>
 hash=<hash_using_alices_secret>
@@ -105,4 +114,5 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
     * these will be missing the hash param. Receivers must check that they are present in either to or cc and simply visit the post url and verify that its contents are the same and that the from url is a substr of the post url?
 * profiles (including followers)
     * Should just pick up micoformats from alice.host. There should be a simple notification to all followers on profile change.
+    * GETing a users otxt-endpoint could return link rels for canonical url for user, following, followers, profile, posts, post template. 
 
