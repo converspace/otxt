@@ -123,11 +123,11 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 * 256 characters
 * No new lines allowed.
 * Links:
-    * compose: This is how you [link](http://example.com)  
-    * display: This is how you <a href="http://example.com">link</a>  
-    * characters counted: This is how you link
+    * compose: `This is how you [link](http://example.com)`
+    * display: `This is how you <a href="http://example.com">link</a>`
+    * characters counted: `This is how you link`
 * Mentions (same as links):
-    * compose: [John](http://john.example.com) How are you?
-    * display: <a href="http://john.example.com">John</a> How are you?
-    * characters counted: John How are you?
+    * compose: `[John](http://john.example.com) How are you?`
+    * display: `<a href="http://john.example.com">John</a> How are you?`
+    * characters counted: `John How are you?`
 * Hashtags: A distributed system cannot implement hashtags like twitter does. The link syntax allows clients/apps to link to a hashtag search engine of their choice.
