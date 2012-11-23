@@ -15,6 +15,7 @@ Key ideas:
         * unfollow
         * status-update
         * profile-update
+        * mention
     * Client-to-Server API
         * This is server implementation specific. 
         * Server imlemenations SHOULD expose an API for clients/apps with oAuth authentication.
