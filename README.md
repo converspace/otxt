@@ -6,6 +6,7 @@ Distribute peer-to-peer (P2P) Twitter replacement, because Twitter should have b
 
 Key ideas:
 * Focus on 256 characters
+* Just like SMS the people that are addressed are not part of the 256 characters to allow for an arbitrary no. of people to have a group conversation with.
 * Hub-less pub/sub. Push fan-out responsiblity to clients.
 * Use HTTPS.
     * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
@@ -124,6 +125,7 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 
 * 256 characters
 * No new lines allowed.
+* To syntax: `@[john](http://john.example.com)`
 * Links:
     * compose: `This is how you [link](http://example.com)`
     * display: `This is how you <a href="http://example.com">link</a>`
