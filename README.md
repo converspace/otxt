@@ -116,6 +116,7 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 * profiles (including followers)
     * Should just pick up micoformats from alice.host. There should be a simple notification to all followers on profile change.
     * GETing a users otxt-endpoint could return link rels for canonical url for user, following, followers, profile, posts, post template. 
+* Repost
 
 
 ## Syntax
