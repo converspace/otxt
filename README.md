@@ -5,7 +5,7 @@ __WORK IN PROGRESS__
 Distribute peer-to-peer (P2P) Twitter replacement, because Twitter should have been a protocol not a product.
 
 Key ideas:
-* Focus on 140 characters
+* Focus on 256 characters
 * Hub-less pub/sub. Push fan-out responsiblity to clients.
 * Use HTTPS.
     * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
@@ -19,6 +19,7 @@ Key ideas:
     * Client-to-Server API
         * This is server implementation specific. 
         * Server imlemenations SHOULD expose an API for clients/apps with oAuth authentication.
+* Verb: txting, Noun: txt
 
 
 ## Alice wants to follow Bob.
