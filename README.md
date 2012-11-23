@@ -129,7 +129,7 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
     * compose: `This is how you [link](http://example.com)`
     * display: `This is how you <a href="http://example.com">link</a>`
     * characters counted: `This is how you link`
-* To (@user is not counted as part of 256 limit):
+* To (visible only to @user?):
     * compose: `@[John](http://john.example.com) How are you?`
     * display: `How are you?`
     * characters counted: `How are you?`
