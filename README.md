@@ -20,7 +20,7 @@ Key ideas:
     * Client-to-Server API
         * This is server implementation specific. 
         * Server imlemenations SHOULD expose an API for clients/apps with oAuth authentication.
-* Verb: txting, Noun: txt
+* Noun & verb: otxt (pronounced o-text)
 
 
 ## Alice wants to follow Bob.
