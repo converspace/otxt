@@ -93,7 +93,7 @@ action=send
 id=<this_txt_id>
 from=bob.host
 to=<urls_of_users>
-txt=<max 140 chars>
+txt=<256_chars>
 in_reply_to=<some_txt_id>
 hash=<hash_of_..._using_alices_secret>
 ```
