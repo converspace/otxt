@@ -1,31 +1,31 @@
-# otxt
+# otxt (WORK IN PROGRESS)
 
-__WORK IN PROGRESS__
+A distributed P2P HTTP based SMS replacement.
 
-Distribute peer-to-peer (P2P) Twitter replacement, because Twitter should have been a protocol not a product.
-
-Key ideas:
-* Focus on 256 characters
-* Just like SMS the people that are addressed are not part of the 256 characters to allow for an arbitrary no. of people to have a group conversation with.
-* Hub-less pub/sub. Push fan-out responsiblity to clients.
-* Use HTTPS.
+## Key ideas
+* Private, individual & group messaging, aka Dark Social.
+* Short text messages limited to 256 characters. No new lines allowed.
+* Users identified by URLs intead of mobile numbers.
+* Links are first class citizens.
+    * compose: `This is how you [link](http://example.com)`
+    * display: `This is how you <a href="http://example.com">link</a>`
+    * characters counted: `This is how you link`
+* Not IM
+    * No presense
+    * But requires adding recipients to ones contact before sending a msg.
+* Support in-reply-to for better conversations.
+* Security via HTTPS.
     * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
-* A protocol and an API
-    * Server-to-Server Protocol
-        * follow
-        * unfollow
-        * status-update
-        * profile-update
-        * mention
-    * Client-to-Server API
-        * This is server implementation specific. 
-        * Server imlemenations SHOULD expose an API for clients/apps with oAuth authentication.
-* Noun & verb: otxt (pronounced o-text)
 
 
-## Alice wants to follow Bob.
 
-### Alice discovers Bob's HTTPS otxt endpoint.
+
+
+
+
+## Alice wants to add Bob to her otxt contacts
+
+### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
 
 ```http
 GET / HTTP/1.1
@@ -43,7 +43,7 @@ Link: <https://bobs.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
 
 
-### Alice sends follow request to Bob
+### Alice's otxt host sends add request to Bob's otxt endpoint
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -51,9 +51,10 @@ Host: bobs.host
 Content-Type: application/x-www-url-form-encoded
 
 from=alice.host
-action=follow
+action=add
 secret=
-id=
+id=<this_request_id>
+intro=<256_chars_introductions>
 ```
 
 ```http
@@ -78,30 +79,28 @@ Link: <https://alice.host/otxt-endpoint>; rel="http://otxt.org/"
 <link href="https://alice.host/otxt-endpoint" rel="http://otxt.org/" />
 ...
 ```
+### Bob's otxt host verifies the add request and sends Alice's otxt host his secret
+...
 
-
-### Bob's post is sent to Alice
+### Bob sends a message to Alice
 
 ```http
 POST /otxt-endpoint HTTP/1.1
 Host: alice.host
 Content-Type: application/x-www-url-form-encoded
 
+action=send
+id=<this_txt_id>
 from=bob.host
-action=status_update
-url=<this_status_update_url>
-content=<max 140 chars>
-in_reply_to=<status_update_url>
 to=<urls_of_users>
-cc=<urls_of_users>
-hash=<hash_using_alices_secret>
+txt=<max 140 chars>
+in_reply_to=<some_txt_id>
+hash=<hash_of_..._using_alices_secret>
 ```
 
 ```http
 HTTP/1.1 200 OK
 ```
-
-If Alice cannot validate the hash or had not sent a follow request, an error response is sent instead. Bob MUST assume unfollow (this is a simple workaround to skip verifying follow requests)?
 
 
 ## Delegated HTTPS
@@ -112,25 +111,3 @@ If Alice cannot validate the hash or had not sent a follow request, an error res
 * When SecureEndpoint receives otxt requests, it sends a notification to Alice's notification callback URL.
 * Alice connects to SecureEndpoint over HTTPS using creds given to her by SecureEndpoint and retrieves her otxt requests. 
 
-## TODO
-* unsolicited mentions.
-    * these will be missing the hash param. Receivers must check that they are present in either to or cc and simply visit the post url and verify that its contents are the same and that the from url is a substr of the post url?
-* profiles (including followers)
-    * Should just pick up micoformats from alice.host. There should be a simple notification to all followers on profile change.
-    * GETing a users otxt-endpoint could return link rels for canonical url for user, following, followers, profile, posts, post template. 
-* Repost
-
-
-## Syntax
-
-* 256 characters
-* No new lines allowed.
-* Links:
-    * compose: `This is how you [link](http://example.com)`
-    * display: `This is how you <a href="http://example.com">link</a>`
-    * characters counted: `This is how you link`
-* To (visible only to @user?):
-    * compose: `@[John](http://john.example.com) How are you?`
-    * display: `How are you?`
-    * characters counted: `How are you?`
-* Hashtags: A distributed system cannot implement hashtags like twitter does. The link syntax allows clients/apps to link to a hashtag search engine of their choice.
