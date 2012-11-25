@@ -54,7 +54,7 @@ from=alice.host
 action=add
 secret=
 id=<this_request_id>
-intro=<256_chars_introductions>
+intro=<256_chars_introduction>
 ```
 
 ```http
