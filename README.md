@@ -1,6 +1,6 @@
 # otxt (WORK IN PROGRESS)
 
-A distributed P2P HTTP based SMS replacement.
+A distributed P2P HTTP-based SMS replacement.
 
 ## Key ideas
 * Private, individual & group short text messaging, aka Dark Social.
