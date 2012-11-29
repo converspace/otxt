@@ -4,6 +4,7 @@ A distributed P2P HTTP-based SMS replacement.
 
 ## Key ideas
 * Private, individual & group short text messaging, aka Dark Social.
+    * group messaging is like email/irc and not sms, i.e., everyone knows who the members of the group are (from the `to` param)
 * Short text messages limited to 256 characters. No new lines allowed.
 * Users identified by URLs intead of mobile numbers.
 * Links are first class citizens.
