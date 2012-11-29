@@ -91,7 +91,7 @@ hash=<hash_of_from+id_using_alices_secret>
 ```
 
 ```http
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 ```
 
 
