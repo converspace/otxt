@@ -25,16 +25,16 @@ A distributed P2P HTTP-based SMS replacement.
 
 ```http
 GET / HTTP/1.1
-Host: bobs.host
+Host: bob.host
 ```
 
 ```http
 HTTP/1.1 200 OK
-Link: <https://bobs.host/otxt-endpoint>; rel="http://otxt.org/"
+Link: <https://bob.host/otxt-endpoint>; rel="http://otxt.org/"
 
 <html>
 ...
-<link href="https://bobs.host/otxt-endpoint" rel="http://otxt.org/" />
+<link href="https://bob.host/otxt-endpoint" rel="http://otxt.org/" />
 ...
 ```
 
@@ -43,10 +43,11 @@ Link: <https://bobs.host/otxt-endpoint>; rel="http://otxt.org/"
 
 ```http
 POST /otxt-endpoint HTTP/1.1
-Host: bobs.host
+Host: bob.host
 Content-Type: application/x-www-url-form-encoded
 
 from=alice.host
+to=bob.host
 action=add
 secret=
 id=<this_request_id>
@@ -75,8 +76,24 @@ Link: <https://alice.host/otxt-endpoint>; rel="http://otxt.org/"
 <link href="https://alice.host/otxt-endpoint" rel="http://otxt.org/" />
 ...
 ```
-### Bob's otxt host verifies the add request and sends Alice's otxt host his secret
-...
+### Bob's otxt host verifies Alice's add request
+
+```http
+POST /otxt-endpoint HTTP/1.1
+Host: alice.host
+Content-Type: application/x-www-url-form-encoded
+
+from=bob.host
+to=alice.host
+action=verify
+id=<this_request_id>
+hash=<hash_of_from+id_using_alices_secret>
+```
+
+```http
+HTTP/1.1 202 Accepted
+```
+
 
 ### Bob sends a message to Alice
 
