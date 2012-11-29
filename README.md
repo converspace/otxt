@@ -15,11 +15,6 @@ A distributed P2P HTTP-based SMS replacement.
     * But requires adding recipients to ones contact before sending a msg.
 * Support in-reply-to for better conversations.
 * Security via HTTPS.
-    * Where HTTPS is not available, use delegated HTTPS endpoints. (see below)
-
-
-
-
 
 
 
@@ -101,13 +96,4 @@ hash=<hash_of_..._using_alices_secret>
 ```http
 HTTP/1.1 200 OK
 ```
-
-
-## Delegated HTTPS
-
-* Alice signs up with SecureEndpoint to accept otxt responses on her behalf
-* SecureEndpoint validates that Alice is the owner of alice.host
-* After verification, Alice is given a HTTPS otxt endpoint URL she can use and allows her to specify a notification callback URL.
-* When SecureEndpoint receives otxt requests, it sends a notification to Alice's notification callback URL.
-* Alice connects to SecureEndpoint over HTTPS using creds given to her by SecureEndpoint and retrieves her otxt requests. 
 
