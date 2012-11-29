@@ -99,3 +99,5 @@ hash=<hash_of_..._using_alices_secret>
 HTTP/1.1 200 OK
 ```
 
+### TODO
+* Should otxt support unsolicited messages?
