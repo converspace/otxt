@@ -13,7 +13,7 @@ A distributed P2P HTTP-based SMS replacement.
     * characters counted: `This is how you link`
 * Not IM
     * No presense
-    * But requires adding recipients to ones contact before sending a msg.
+    * But requires adding recipients to ones contact before sending a msg (how does tihs affect group messaging?)
 * Support in-reply-to for better conversations.
 * Security via HTTPS.
 
