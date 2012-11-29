@@ -90,6 +90,7 @@ from=bob.host
 to=<urls_of_users>
 txt=<256_chars_msg>
 in_reply_to=<some_txt_id>
+datetime=<datetime>
 hash=<hash_of_..._using_alices_secret>
 ```
 
