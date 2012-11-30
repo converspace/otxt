@@ -115,4 +115,5 @@ HTTP/1.1 200 OK
    * One way to do this is to treat a group just like any other person.
       * When a user creates a group, the group pairs with all members of the group.
       * When someone sends a msg to the group, the group forwards the msg to the members.
+   * Alternatively, a new action `fwd` can be introduced so that msgs from people that haven't paired can be sent via paired ones.
 * Should otxt support unsolicited messages?
