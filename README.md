@@ -14,7 +14,8 @@ A distributed P2P HTTP-based SMS replacement.
 * Not IM
     * No presense
     * But requires adding recipients to ones contact before sending a msg
-      * requiring manual approval helps with SPAM and makes the protocol less chatty because of the shared secret instead of verifying authenticity of individual msgs
+      * makes the protocol less chatty because of the shared secret instead of verifying authenticity of individual msgs 
+      * requiring manual approval helps with SPAM
 * Support in-reply-to for better conversations.
 * Security via HTTPS.
 
