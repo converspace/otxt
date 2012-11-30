@@ -19,9 +19,11 @@ A distributed P2P HTTP-based SMS replacement.
 
 
 
-## Alice wants to add Bob to her otxt contacts
+## Alice wants to send a msg to Bob
 
-### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
+### Alice adds Bob to her contacts
+
+#### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
 
 ```http
 HEAD / HTTP/1.1
@@ -34,7 +36,7 @@ Link: <https://bob.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
 
 
-### Alice's otxt host sends add request to Bob's otxt endpoint
+#### Alice's otxt host sends add request to Bob's otxt endpoint
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -54,7 +56,7 @@ HTTP/1.1 202 Accepted
 ```
 
 
-### Bob discovers Alice's HTTPS otxt endpoint
+#### Bob discovers Alice's HTTPS otxt endpoint
 
 
 ```http
@@ -66,7 +68,8 @@ Host: alice.host
 HTTP/1.1 200 OK
 Link: <https://alice.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
-### Bob's otxt host verifies Alice's add request
+
+#### Bob's otxt host verifies Alice's add request
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -86,21 +89,21 @@ HTTP/1.1 200 OK
 
 Now Bob and Alice can send each other messages using the shared secret that Alice orginally send to Bob.
 
-### Bob sends a message to Alice
+### Alice sends a message to Bob
 
 ```http
 POST /otxt-endpoint HTTP/1.1
-Host: alice.host
+Host: bob.host
 Content-Type: application/x-www-url-form-encoded
 
 action=send
 id=<this_txt_id>
-from=bob.host
+from=alice.host
 to=<urls_of_users>
 txt=<256_chars_msg>
 in_reply_to=<some_txt_id>
 datetime=<datetime>
-hash=<hash_of_..._using_alices_secret>
+hash=<hash_of_..._using_shared_secret>
 ```
 
 ```http
