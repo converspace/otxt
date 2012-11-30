@@ -108,6 +108,6 @@ HTTP/1.1 200 OK
 ```
 
 ## TODO
-* groupd messaging?
+* group messaging?
    * This is currently not possible because you need to add a contact before you can talk to them and not everyone in the group (comma separated `to` param) would have added everyone.
 * Should otxt support unsolicited messages?
