@@ -24,18 +24,13 @@ A distributed P2P HTTP-based SMS replacement.
 ### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
 
 ```http
-GET / HTTP/1.1
+HEAD / HTTP/1.1
 Host: bob.host
 ```
 
 ```http
 HTTP/1.1 200 OK
 Link: <https://bob.host/otxt-endpoint>; rel="http://otxt.org/"
-
-<html>
-...
-<link href="https://bob.host/otxt-endpoint" rel="http://otxt.org/" />
-...
 ```
 
 
@@ -63,18 +58,13 @@ HTTP/1.1 202 Accepted
 
 
 ```http
-GET / HTTP/1.1
+HEAD / HTTP/1.1
 Host: alice.host
 ```
 
 ```http
 HTTP/1.1 200 OK
 Link: <https://alice.host/otxt-endpoint>; rel="http://otxt.org/"
-
-<html>
-...
-<link href="https://alice.host/otxt-endpoint" rel="http://otxt.org/" />
-...
 ```
 ### Bob's otxt host verifies Alice's add request
 
