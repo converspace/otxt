@@ -18,12 +18,9 @@ A distributed P2P HTTP-based SMS replacement.
 * Security via HTTPS.
 
 
+## Alice adds Bob to her contacts
 
-## Alice wants to send a msg to Bob
-
-### Alice adds Bob to her contacts
-
-#### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
+### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
 
 ```http
 HEAD / HTTP/1.1
@@ -36,7 +33,7 @@ Link: <https://bob.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
 
 
-#### Alice's otxt host sends add request to Bob's otxt endpoint
+### Alice's otxt host sends add request to Bob's otxt endpoint
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -56,7 +53,7 @@ HTTP/1.1 202 Accepted
 ```
 
 
-#### Bob discovers Alice's HTTPS otxt endpoint
+### Bob discovers Alice's HTTPS otxt endpoint
 
 
 ```http
@@ -69,7 +66,7 @@ HTTP/1.1 200 OK
 Link: <https://alice.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
 
-#### Bob's otxt host verifies Alice's add request
+### Bob's otxt host verifies Alice's add request
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -89,7 +86,7 @@ HTTP/1.1 200 OK
 
 Now Bob and Alice can send each other messages using the shared secret that Alice orginally send to Bob.
 
-### Alice sends a message to Bob
+## Alice sends a message to Bob
 
 ```http
 POST /otxt-endpoint HTTP/1.1
