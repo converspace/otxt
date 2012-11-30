@@ -3,9 +3,9 @@
 A distributed P2P HTTP-based SMS replacement.
 
 ## Key ideas
-* Private, individual & group short text messaging, aka Dark Social.
-    * group messaging is like email/irc and not sms, i.e., everyone knows who the members of the group are (from the `to` param)
-* Short text messages limited to 256 characters. No new lines allowed.
+* Focus on Dark Social (SMS, Email, Whatsapp)
+* Private one-to-one short text messaging like SMS.
+* Messages limited to 256 characters. No new lines allowed.
 * Users identified by URLs intead of mobile numbers.
 * Links are first class citizens.
     * compose: `This is how you [link](http://example.com)`
@@ -13,7 +13,7 @@ A distributed P2P HTTP-based SMS replacement.
     * characters counted: `This is how you link`
 * Not IM
     * No presense
-    * But requires adding recipients to ones contact before sending a msg (how does tihs affect group messaging?)
+    * But requires adding recipients to ones contact before sending a msg
 * Support in-reply-to for better conversations.
 * Security via HTTPS.
 
@@ -107,4 +107,6 @@ HTTP/1.1 200 OK
 ```
 
 ### TODO
+* groupd messaging?
+   * This is currently not possible because you need to add a contact before you can talk to them and not everyone in the group (comma separated `to` param) would have added everyone.
 * Should otxt support unsolicited messages?
