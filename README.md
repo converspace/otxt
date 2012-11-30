@@ -116,4 +116,3 @@ HTTP/1.1 200 OK
       * When a user creates a group, the group pairs with all members of the group.
       * When someone sends a msg to the group, the group forwards the msg to the members.
    * Alternatively, a new action `relay` can be introduced so that msgs from people that haven't paired can be sent via paired ones.
-* Should otxt support unsolicited messages?
