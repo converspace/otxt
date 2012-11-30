@@ -3,7 +3,7 @@
 A distributed P2P HTTP-based SMS replacement.
 
 ## Key ideas
-* Focus on Dark Social (SMS, Email, Whatsapp)
+* Focus on Dark Social (SMS, Email, Whatsapp, [Pair](http://trypair.com/))
 * Private one-to-one short text messaging like SMS.
 * Messages limited to 256 characters. No new lines allowed.
 * Users identified by URLs intead of mobile numbers.
@@ -112,4 +112,7 @@ HTTP/1.1 200 OK
 ## TODO
 * group messaging?
    * This is currently not possible because you need to add a contact before you can talk to them and not everyone in the group (comma separated `to` param) would have added everyone.
+   * One way to do this is to treat a group just like any other person.
+      * When a user creates a group, the group pairs with all members of the group.
+      * When someone sends a msg to the group, the group forwards the msg to the members.
 * Should otxt support unsolicited messages?
