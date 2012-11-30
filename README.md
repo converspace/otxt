@@ -96,7 +96,7 @@ Content-Type: application/x-www-url-form-encoded
 action=send
 id=<this_txt_id>
 from=alice.host
-to=<urls_of_users>
+to=bob.host
 txt=<256_chars_msg>
 in_reply_to=<some_txt_id>
 datetime=<datetime>
