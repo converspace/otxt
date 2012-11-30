@@ -84,6 +84,7 @@ hash=<hash_of_from+id_using_alices_secret>
 HTTP/1.1 200 OK
 ```
 
+Now Bob and Alice can send each other messages using the shared secret that Alice orginally send to Bob.
 
 ### Bob sends a message to Alice
 
