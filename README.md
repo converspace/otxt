@@ -13,14 +13,14 @@ A distributed P2P HTTP-based SMS replacement.
     * characters counted: `This is how you link`
 * Not IM
     * No presense
-    * But requires adding recipients to ones contact before sending a msg
+    * But requires adding recipients to ones contact (_pairing_) before sending a msg
       * makes the protocol less chatty because of the shared secret instead of verifying authenticity of individual msgs 
       * requiring manual approval helps with SPAM
 * Support in-reply-to for better conversations.
 * Security via HTTPS.
 
 
-## Alice adds Bob to her contacts
+## Alice pairs with Bob
 
 ### Alice's otxt host discovers Bob's HTTPS otxt endpoint.
 
@@ -44,7 +44,7 @@ Content-Type: application/x-www-url-form-encoded
 
 from=alice.host
 to=bob.host
-action=add
+action=pair
 secret=
 id=<this_request_id>
 intro=<256_chars_introduction>
