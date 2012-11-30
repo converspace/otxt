@@ -13,7 +13,7 @@ A distributed P2P HTTP-based SMS replacement.
     * characters counted: `This is how you link`
 * Not IM
     * No presense
-    * But requires adding recipients to ones contact (_pairing_) before sending a msg
+    * But requires pairing before sending a msg
       * makes the protocol less chatty because of the shared secret instead of verifying authenticity of individual msgs 
       * requiring manual approval helps with SPAM
 * Support in-reply-to for better conversations.
