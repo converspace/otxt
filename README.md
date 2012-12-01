@@ -48,6 +48,7 @@ action=pair
 secret=
 id=<this_request_id>
 intro=<256_chars_introduction>
+email=<alices_email_address>
 ```
 
 ```http
