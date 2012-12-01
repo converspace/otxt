@@ -80,6 +80,7 @@ from=bob.host
 to=alice.host
 action=verify
 id=<this_request_id>
+email=<bobs_email_address>
 hash=<hash_of_from+id_using_alices_secret>
 ```
 
