@@ -7,7 +7,7 @@ HTTP-based distributed P2P short message communication protocol (to replace SMS)
 * Private one-to-one short text messaging like SMS.
 * Messages limited to 256 characters. No new lines allowed.
 * Users identified by URLs intead of mobile numbers.
-* Links are first class citizens.
+* Links are first class citizens (Might have to skip this to enforce the 256 char limit?).
     * compose: `This is how you [link](http://example.com)`
     * display: `This is how you <a href="http://example.com">link</a>`
     * characters counted: `This is how you link`
