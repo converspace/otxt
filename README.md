@@ -125,6 +125,10 @@ HTTP/1.1 200 OK
 * fetch profile?
    * GET /otxt-endpoint?profile=(all|email|name|avatar)&of=<>&from=<>&hash=<>
    * Allowed only after pairing since this will require the shared secret.
+* Multi-Media (using additional params)
+   * img=<image_url>
+   * vid=<video_url>
+   * aud=<audio_url>
 * Links are first class citizens (Might have to skip this to enforce the 256 char limit?).
     * compose: `This is how you [link](http://example.com)`
     * display: `This is how you <a href="http://example.com">link</a>`
