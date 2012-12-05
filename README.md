@@ -49,7 +49,6 @@ action=pair
 secret=
 id=tag:alice@example.com,2012-12-02:alice.host:pair:2
 intro=<256_chars_introduction>
-email=alice@example.com
 ```
 
 ```http
@@ -86,7 +85,6 @@ from=bob.host
 to=alice.host
 action=verify
 id=tag:alice@example.com,2012-12-02:alice.host:pair:2
-email=bob@example.net
 hash=<hash_of_from+id_using_alices_secret>
 ```
 
