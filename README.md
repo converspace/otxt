@@ -36,7 +36,7 @@ Link: <https://bob.host/otxt-endpoint>; rel="http://otxt.org/"
 ```
 
 
-### Alice's otxt host sends add request to Bob's otxt endpoint
+### Alice's otxt host sends pairing request to Bob's otxt endpoint
 
 ```http
 POST /otxt-endpoint HTTP/1.1
@@ -47,9 +47,9 @@ from=alice.host
 to=bob.host
 action=pair
 secret=
-id=<this_request_id>
+id=tag:alice@example.com,2012-12-02:alice.host:pair:2
 intro=<256_chars_introduction>
-email=<alices_email_address>
+email=alice@example.com
 ```
 
 ```http
@@ -85,8 +85,8 @@ Content-Type: application/x-www-url-form-encoded
 from=bob.host
 to=alice.host
 action=verify
-id=<this_request_id>
-email=<bobs_email_address>
+id=tag:alice@example.com,2012-12-02:alice.host:pair:2
+email=bob@example.net
 hash=<hash_of_from+id_using_alices_secret>
 ```
 
@@ -104,11 +104,11 @@ Host: bob.host
 Content-Type: application/x-www-url-form-encoded
 
 action=send
-id=<this_txt_id>
+id=tag:alice@example.com,2012-12-02:alice.host:txt:2
 from=alice.host
 to=bob.host
 txt=<256_chars_msg>
-in_reply_to=<some_txt_id>
+in_reply_to=tag:bob@example.net,2012-12-01:bob.host:txt:22
 datetime=<datetime>
 hash=<hash_of_..._using_shared_secret>
 ```
@@ -131,3 +131,9 @@ HTTP/1.1 200 OK
     * compose: `This is how you [link](http://example.com)`
     * display: `This is how you <a href="http://example.com">link</a>`
     * characters counted: `This is how you link`
+
+## See Also
+* TagURI (http://taguri.org/)
+   * http://web.archive.org/web/20110514113830/http://diveintomark.org/archives/2004/05/28/howto-atom-id
+   * http://www.rfc-editor.org/rfc/rfc4151.txt
+   * http://www.goer.org/Journal/2004/06/atom_ids_whats_wrong_with_domain_timestamp.html
