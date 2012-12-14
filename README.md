@@ -116,6 +116,7 @@ HTTP/1.1 200 OK
 ```
 
 ## TODO
+* Discovery over http is not secure. Should that be made over HTTPS as well?
 * group messaging?
    * This is currently not possible because you need to add a contact before you can talk to them and not everyone in the group (comma separated `to` param) would have added everyone.
    * One way to do this is to treat a group just like any other person.
