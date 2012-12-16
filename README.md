@@ -116,6 +116,9 @@ HTTP/1.1 200 OK
 ```
 
 ## TODO
+* Use microformats instead of link header/element?
+   * Almost always you will put it up on your page for "humans" so why not just use that!
+   * `<div id="me"><a href="https://example.com" rel="http://otxt.org/">https://example.com</a></div>`
 * Discovery over http is not secure. Should that be made over HTTPS as well?
 * group messaging?
    * This is currently not possible because you need to add a contact before you can talk to them and not everyone in the group (comma separated `to` param) would have added everyone.
