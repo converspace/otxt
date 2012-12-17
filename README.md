@@ -126,7 +126,7 @@ HTTP/1.1 200 OK
       * When a user creates a group, the group pairs with all members of the group.
       * When someone sends a msg to the group, the group forwards the msg to the members.
    * Alternatively, a new action `relay` can be introduced so that msgs from people that haven't paired can be sent via paired ones.
-* fetch profile?
+* fetch profile? (maybe just use microformats to pick up public info and use this only for private info?)
    * GET /otxt-endpoint?profile=(all|email|name|avatar)&of=<>&from=<>&hash=<>
    * Allowed only after pairing since this will require the shared secret.
 * Multi-Media (using additional params)
