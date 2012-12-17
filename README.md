@@ -55,6 +55,7 @@ intro=<256_chars_introduction>
 HTTP/1.1 202 Accepted
 ```
 
+Bob could setup his otxt host to require manual or automatic approval.
 
 ### Bob discovers Alice's HTTPS otxt endpoint
 
